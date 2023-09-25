@@ -1,0 +1,11 @@
+{
+  "staff": [
+    { "fName": "Bill", "lName": "Williams", "email": "bill@fullstack.guide" },
+    { "fName": "Tom", "lName": "Williams", "email": "tom@fullstack.guide" },
+    { "fName": "Karen", "lName": "Williams", "email": "karen@fullstack.guide" },
+    { "fName": "Sue", "lName": "Williams", "email": "sue@fullstack.guide" },
+    { "fName": "Mike", "lName": "Williams", "email": "mike@fullstack.guide" },
+    { "fName": "Kim", "lName": "Williams", "email": "kim@fullstack.guide" },
+    { "fName": "Philip", "lName": "Williams", "email": "phil@fullstack.guide" }
+  ]
+}

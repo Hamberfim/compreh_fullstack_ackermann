@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="Anthony Hamlin" />
+    <style type="text/css">
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 0.9em;
+      }
+
+      form {
+        /* the form is the container in this case */
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-gap: 8px;
+        background: #f9f9f9;
+        border: 1px solid lightgrey;
+        margin: 2rem auto 0 auto;
+        max-width: 600px;
+        padding: 1em;
+        border-radius: 5px;
+      }
+
+      form input {
+        background: white;
+        border: 1px solid darkgray;
+      }
+
+      form button {
+        background: lightgrey;
+        padding: 0.8em;
+        width: 100%;
+        border: 0;
+      }
+
+      form button:hover {
+        background: deepskyblue;
+      }
+
+      label {
+        padding: 0.5em 0.5em 0.5em 0;
+        text-align: right;
+        /* from column 1 to column 2 */
+        grid-column: 1 / 2;
+      }
+
+      input {
+        padding: 0.7em;
+      }
+
+      input:focus {
+        outline: 3px solid deepskyblue;
+      }
+
+      input,
+      button {
+        /* from column 2 to column 3 */
+        grid-column: 2 / 3;
+      }
+    </style>
+    <title>Design Forms</title>
+  </head>
+  <body>
+    <form>
+      <label for="firstName">First name</label>
+      <input id="firstName" type="text" />
+      <label for="lastName">Last name</label>
+      <input id="lastName" type="text" />
+      <label for="birthday">Birth date</label>
+      <input id="birthday" type="date" />
+      <label for="mail">Email:</label>
+      <input id="email" type="email" />
+      <button>Send</button>
+    </form>
+  </body>
+</html>

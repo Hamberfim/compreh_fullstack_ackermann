@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="Anthony Hamlin" />
+    <title>Contacts Example</title>
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        console.log('DOM fully loaded and parsed');
+
+        // return some nodes
+        const tableRowJames = document.querySelector('.james');
+        console.log(tableRowJames);
+        const jameNextElSib = tableRowJames.nextElementSibling;
+        console.log(jameNextElSib);
+
+        // modify a node
+        let firstName = jameNextElSib.firstElementChild;
+        console.log(firstName);
+        // delay changing name
+        setTimeout(function () {
+          firstName.textContent = 'Simon';
+          console.log(firstName);
+        }, 1500);
+
+        // create a new row
+        const tableBody = document.querySelector('tbody');
+        let html = `<tr ><td>titus</td><td>Doe</td><td>titus.doe@fullstack.guide</td></tr>`;
+        let nRow = tableBody.insertRow(-1);
+        nRow.className = 'row odd';
+        nRow.innerHTML = html;
+        html = `<tr><td>rufus</td><td>Doe</td><td>rufus.doe@fullstack.guide</td></tr>`;
+        let nRow2 = tableBody.insertRow(-1);
+        nRow2.className = 'row even';
+        nRow2.innerHTML = html;
+
+        const persons = [
+          { fName: 'Bill', lName: 'Williams', email: 'bill@fullstack.guide' },
+          { fName: 'Tom', lName: 'Williams', email: 'tom@fullstack.guide' },
+          { fName: 'Karen', lName: 'Williams', email: 'karen@fullstack.guide' },
+          { fName: 'Sue', lName: 'Williams', email: 'sue@fullstack.guide' },
+          { fName: 'Mike', lName: 'Williams', email: 'mike@fullstack.guide' },
+        ];
+
+        // function to create table
+        function createPersonsTable() {
+          const tableContainer = document.querySelector('#container');
+          const table = document.createElement('table');
+          const thead = document.createElement('thead');
+          thead.innerHTML = `<tr><th>First Name</th><th>Last Name</th><th>Email Address</th>`;
+
+          // table body
+          const tbody = document.createElement('tbody');
+          for (let i = 0; i < persons.length; i++) {
+            person = persons[i];
+            const tr = document.createElement('tr');
+
+            tr.innerHTML = `<td>${person.fName}</td><td>${person.lName}</td><td>${person.email}</td>`;
+
+            // set class name to style rows of dynamic table
+            if (i % 2 === 0) {
+              tr.className = 'row odd';
+            } else {
+              tr.className = 'row even';
+            }
+            tbody.appendChild(tr);
+          }
+
+          // add table head
+          table.appendChild(thead);
+          // add table body
+          table.appendChild(tbody);
+          // add table to container
+          tableContainer.appendChild(table);
+        }
+
+        // call dynamic table
+        createPersonsTable(persons);
+
+        // style tables
+        const tableRowsEven = document.querySelectorAll('.even');
+        if (tableRowsEven.length > 0) {
+          for (let i = 0; i < tableRowsEven.length; i++) {
+            const tableRow = tableRowsEven.item(i);
+            tableRow.style.backgroundColor = '#CCCCCC';
+          }
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <main id="main">
+      <h1>Contacts</h1>
+      <table id="contact-list-table" summary="Contacts">
+        <thead>
+          <tr>
+            <th id="table-header-first-name">First name</th>
+            <th id="table-header-last-name">Last name</th>
+            <th id="table-header-email">Email address</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="row odd">
+            <td>John</td>
+            <td>Doe</td>
+            <td>john.doe@fullstack.guide</td>
+          </tr>
+          <tr class="row even james">
+            <td>James</td>
+            <td>Doe</td>
+            <td>james.doe@fullstack.guide</td>
+          </tr>
+          <tr class="row odd">
+            <td>Peter</td>
+            <td>Doe</td>
+            <td>peter.doe@fullstack.guide</td>
+          </tr>
+          <tr class="row even">
+            <td>Paul</td>
+            <td>Doe</td>
+            <td>paula.doe@fullstack.guide</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+    <br />
+    <h4>Dynamic Table</h4>
+    <div id="container"></div>
+  </body>
+</html>

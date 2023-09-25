@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="Anthony Hamlin" />
+    <title>Contacts Example</title>
+    <script>
+      // function to create table
+      function createTable(inputData) {
+        const container = document.querySelector('#container');
+        const table = document.createElement('table');
+        const thead = document.createElement('thead');
+        thead.innerHTML = `<tr><th>First Name</th><th>Last Name</th><th>Email Address</th>`;
+        console.log('{name: dataStructure(length)}', inputData);
+        console.log('length:', inputData.staff.length);
+        // table body
+        const tbody = document.createElement('tbody');
+        for (let i = 0; i < inputData.staff.length; i++) {
+          let item = inputData.staff[i];
+
+          const tr = document.createElement('tr');
+          tr.innerHTML = `<td>${item.fName}</td><td>${item.lName}</td><td>${item.email}</td>`;
+
+          // set class name to style rows of dynamic table
+          if (i % 2 === 0) {
+            tr.className = 'row odd';
+          } else {
+            tr.className = 'row even';
+          }
+          tbody.appendChild(tr);
+        }
+
+        // add table head
+        table.appendChild(thead);
+        // add table body
+        table.appendChild(tbody);
+        // add table to container
+        container.appendChild(table);
+
+        // style tables
+        const tableRowsEven = document.querySelectorAll('.even');
+        if (tableRowsEven.length > 0) {
+          for (let i = 0; i < tableRowsEven.length; i++) {
+            const tableRow = tableRowsEven.item(i);
+            tableRow.style.backgroundColor = '#b1cefc';
+          }
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', async (event) => {
+        console.log('DOM fully loaded and parsed');
+        // config object for method and headers mime type
+        const config = {
+          method: 'GET',
+          header: { Accept: 'application/json' },
+        };
+
+        // fetch data
+        const response = await fetch('data/data.json', config);
+        const datafile = await response.json();
+        createTable(datafile);
+      });
+    </script>
+  </head>
+  <body>
+    <h4>Dynamic Table</h4>
+    <div id="container"></div>
+  </body>
+</html>

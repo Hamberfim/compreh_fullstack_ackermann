@@ -1,0 +1,292 @@
+/* 9.1 Variables */
+body {
+  margin: 1.2%;
+  font: 100% Helvetica, sans-serif;
+  color: #80acff;
+}
+
+h1 {
+  color: #4284fd;
+}
+
+h2 {
+  color: #80acff;
+}
+
+/* 9.6 Operators */
+article {
+  padding: 0.5rem;
+  border: 1px solid #80acff;
+  border-radius: 0.25rem;
+  float: left;
+  width: 62.5%;
+}
+
+aside {
+  padding: 0.5rem;
+  border: 1px solid #80acff;
+  border-radius: 0.25rem;
+  float: right;
+  width: 31.25%;
+}
+
+/* 9.8 branching if/else logic */
+body {
+  /* light theme */
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* 9.10-15 loops */
+/* @each loop */
+.icon-error {
+  background-image: url("/icons/error.png");
+}
+
+.icon-warning {
+  background-image: url("/icons/warning.png");
+}
+
+.icon-info {
+  background-image: url("/icons/info.png");
+}
+
+.icon-success {
+  background-image: url("/icons/success.png");
+}
+
+.icon-danger {
+  background-image: url("/icons/danger.png");
+}
+
+/* @for loop to */
+.column-i-1 {
+  width: 100%;
+}
+
+.column-i-2 {
+  width: 50%;
+}
+
+.column-i-3 {
+  width: 33.3333333333%;
+}
+
+.column-i-4 {
+  width: 25%;
+}
+
+.column-i-5 {
+  width: 20%;
+}
+
+/* @for loop through */
+.column-j-1 {
+  width: 100%;
+}
+
+.column-j-2 {
+  width: 50%;
+}
+
+.column-j-3 {
+  width: 33.3333333333%;
+}
+
+.column-j-4 {
+  width: 25%;
+}
+
+.column-j-5 {
+  width: 20%;
+}
+
+.column-j-6 {
+  width: 16.6666666667%;
+}
+
+/* @while loop */
+.width-0 {
+  width: 0px;
+}
+
+.width-1 {
+  width: 10px;
+}
+
+.width-2 {
+  width: 20px;
+}
+
+.width-3 {
+  width: 30px;
+}
+
+.width-4 {
+  width: 40px;
+}
+
+/* 9.16 using functions */
+/* moved to top | REQUIRED TO BE AT TOP OF DOC
+// Importing the required Sass modules
+@use 'sass:color';
+@use 'sass:math';
+@use 'sass:string';
+*/
+h1 {
+  background-color: #105b80;
+}
+
+.someClass {
+  width: 500px;
+}
+
+body {
+  font-family: verdana;
+}
+
+/* 9.18 using custom functions */
+.width-180px {
+  width: 180px;
+}
+
+.width-200px {
+  width: 200px;
+}
+
+.width-300px {
+  width: 300px;
+}
+
+/* alt width values */
+.width-110px {
+  width: 110px;
+}
+
+.width-100px {
+  width: 100px;
+}
+
+.width-150px {
+  width: 150px;
+}
+
+h2 {
+  color: #000000;
+  font-family: serif;
+  background-color: #e6a85b;
+}
+
+/* 9.24 nesting */
+ul {
+  font-family: Helvetica, sans-serif;
+  font-style: oblique;
+  font-weight: 600;
+}
+ul li {
+  /* 1. Nesting */
+  background-color: #e6a85b;
+  line-height: 20px;
+  border-radius: 5px;
+  padding: 1%;
+  margin: 3px 0px;
+}
+ul li ol {
+  /* 2. Nesting */
+  font-family: cursive;
+  font-style: normal;
+  font-weight: 300;
+  color: #fff;
+  padding-right: 3%;
+  padding-bottom: 3%;
+}
+ul li ol li {
+  /* 2. Nesting */
+  background-color: rgba(255, 0, 0, 0.5);
+  line-height: 30px;
+  border-radius: 5px;
+  padding-left: 3px;
+}
+
+/* 9.26 inheritance and mixins */
+/* inheritance */
+.button-base, .button-submit, .button-special {
+  color: #4284fd;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button-special {
+  background-color: #e6a85b;
+}
+
+.button-special:hover {
+  color: #fff;
+  background-color: rgb(255, 0, 0);
+}
+
+.button-submit {
+  border: thin solid #80acff;
+}
+
+.button-submit:hover {
+  color: #fff;
+  background-color: rgb(255, 0, 0);
+}
+
+/* mixins */
+.error {
+  color: red;
+  font-size: 15px;
+  font-weight: bold;
+  border: 1px solid yellow;
+  margin: 3px 0px;
+  padding: 1.2%;
+  border-radius: 5px;
+  background-color: blue;
+}
+
+.warning {
+  color: red;
+  font-size: 15px;
+  font-weight: bold;
+  border: 1px solid yellow;
+  margin: 3px 0px;
+  padding: 1.2%;
+  border-radius: 5px;
+  background-color: yellow;
+}
+
+.info {
+  background: DarkGray;
+  box-shadow: 0 0 1px rgba(169, 169, 169, 0.25);
+  color: #fff;
+  margin: 3px 0px;
+  padding: 1.2%;
+  border-radius: 5px;
+}
+
+.alert {
+  background: DarkRed;
+  box-shadow: 0 0 1px rgba(139, 0, 0, 0.25);
+  color: #fff;
+  margin: 3px 0px;
+  padding: 1.2%;
+  border-radius: 5px;
+}
+
+.success {
+  background: DarkGreen;
+  box-shadow: 0 0 1px rgba(0, 100, 0, 0.25);
+  color: #fff;
+  margin: 3px 0px;
+  padding: 1.2%;
+  border-radius: 5px;
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,43 @@
+/* SASS file */
+/* main variables */
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0.5rem;
+  background-color: #fff;
+  color: #2d2d2d;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+}
+
+article, aside {
+  width: 50%;
+  float: left;
+  background-color: #004282;
+  color: #fff;
+  margin-bottom: 8px;
+  padding: 0.5% 0.8%;
+  border-radius: 5px;
+}
+
+aside {
+  width: 45%;
+  float: right;
+  background-color: #598dc9;
+  color: #fff;
+  font-size: smaller;
+}
+
+/*# sourceMappingURL=css.css.map */

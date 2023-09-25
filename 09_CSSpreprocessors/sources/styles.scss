@@ -1,0 +1,269 @@
+// Importing the required Sass modules
+@use 'sass:color';
+@use 'sass:math';
+@use 'sass:string';
+
+/* 9.1 Variables */
+$font: Helvetica, sans-serif;
+$primary-color: #4284fd;
+$secondary-color: #80acff;
+
+body {
+  margin: 1.2%;
+  font: 100% $font;
+  color: $secondary-color;
+}
+
+h1 {
+  color: $primary-color;
+}
+
+h2 {
+  color: $secondary-color;
+}
+
+/* 9.6 Operators */
+$base-width: 100%;
+
+article {
+  padding: 0.5rem;
+  border: 1px solid #80acff;
+  border-radius: 0.25rem;
+  float: left;
+  width: calc(600px / 960px) * $base-width;
+}
+aside {
+  padding: 0.5rem;
+  border: 1px solid #80acff;
+  border-radius: 0.25rem;
+  float: right;
+  width: calc(300px / 960px) * $base-width;
+}
+
+/* 9.8 branching if/else logic */
+$light-theme: true;
+$light-background: #ffffff;
+$light-text: #000000;
+$dark-background: #000000;
+$dark-text: #ffffff;
+
+body {
+  @if $light-theme {
+    /* light theme */
+    background-color: $light-background;
+    color: $light-text;
+  } @else {
+    /* dark theme */
+    background-color: $dark-background;
+    color: $dark-text;
+  }
+}
+
+/* 9.10-15 loops */
+$icons: error, warning, info, success, danger;
+
+/* @each loop */
+@each $icon in $icons {
+  .icon-#{$icon} {
+    background-image: url('/icons/#{$icon}.png');
+  }
+}
+
+/* @for loop to */
+@for $i from 1 to 6 {
+  .column-i-#{$i} {
+    width: calc(100% / $i);
+  }
+}
+
+/* @for loop through */
+@for $j from 1 through 6 {
+  .column-j-#{$j} {
+    width: calc(100% / $j);
+  }
+}
+
+/* @while loop */
+$counter: 0;
+
+@while $counter < 5 {
+  .width-#{$counter} {
+    width: (10 * $counter) + px;
+  }
+
+  $counter: $counter + 1;
+}
+
+/* 9.16 using functions */
+/* moved to top | REQUIRED TO BE AT TOP OF DOC
+// Importing the required Sass modules
+@use 'sass:color';
+@use 'sass:math';
+@use 'sass:string';
+*/
+// Using a function from the "sass:color" module
+$color1: #1fb601;
+$color2: #0000ff;
+
+h1 {
+  background-color: color.mix($color1, $color2);
+}
+
+// Using a function from the "sass:math" module
+$width1: 200px;
+$width2: 500px;
+
+.someClass {
+  width: math.max($width1, $width2);
+}
+
+// Using a function from the "sass:string" module
+$fontFamily: Verdana;
+$fontFamily2: serif;
+
+body {
+  font-family: string.to-lower-case($fontFamily);
+}
+
+/* 9.18 using custom functions */
+@function sum($numbers...) {
+  $sum: 0;
+  @each $number in $numbers {
+    $sum: $sum + $number;
+  }
+  @return $sum;
+}
+
+.width-180px {
+  width: sum(50px, 30px, 100px);
+}
+
+.width-200px {
+  width: sum(50px, 50px, 50px, 50px);
+}
+
+.width-300px {
+  width: sum(100px, 100px, 100px);
+}
+
+/* alt width values */
+$value-list: ((25px, 15px, 70px), (25px, 25px, 25px, 25px), (50px, 50px, 50px));
+@each $values in $value-list {
+  $sum: sum($values...);
+  @debug (The variable $sum has currently this value: $sum);
+  .width-#{$sum} {
+    width: $sum;
+  }
+}
+
+@debug rgb(241, 252, 93);
+@debug rgb(218, 83, 89);
+$color3: rgb(241, 252, 93);
+$color4: rgb(218, 83, 89);
+h2 {
+  color: #000000;
+  font-family: $fontFamily2;
+  background-color: color.mix($color3, $color4);
+}
+
+/* 9.24 nesting */
+ul {
+  font-family: $font;
+  font-style: oblique;
+  font-weight: 600;
+  li {
+    /* 1. Nesting */
+    background-color: color.mix($color3, $color4);
+    line-height: 20px;
+    border-radius: 5px;
+    padding: 1%;
+    margin: 3px 0px;
+    ol {
+      /* 2. Nesting */
+      font-family: cursive;
+      font-style: normal;
+      font-weight: 300;
+      color: #fff;
+      padding-right: 3%;
+      padding-bottom: 3%;
+      li {
+        /* 2. Nesting */
+        background-color: rgb(255, 0, 0, 0.5);
+        line-height: 30px;
+        border-radius: 5px;
+        padding-left: 3px;
+      }
+    }
+  }
+}
+
+/* 9.26 inheritance and mixins */
+/* inheritance */
+.button-base {
+  color: $primary-color;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  font-family: $font;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button-special {
+  @extend .button-base;
+  background-color: color.mix($color3, $color4);
+}
+.button-special:hover {
+  color: #fff;
+  background-color: rgb(255, 0, 0);
+}
+
+.button-submit {
+  @extend .button-base;
+  border: thin solid $secondary-color;
+}
+.button-submit:hover {
+  color: #fff;
+  background-color: rgb(255, 0, 0);
+}
+
+/* mixins */
+@mixin important-marker {
+  color: red;
+  font-size: 15px;
+  font-weight: bold;
+  border: 1px solid yellow;
+  margin: 3px 0px;
+  padding: 1.2%;
+  border-radius: 5px;
+}
+
+.error {
+  @include important-marker;
+  background-color: blue;
+}
+
+.warning {
+  @include important-marker;
+  background-color: yellow;
+}
+
+@mixin theme($theme: DarkGray) {
+  background: $theme;
+  box-shadow: 0 0 1px rgba($theme, 0.25);
+  color: #fff;
+  margin: 3px 0px;
+  padding: 1.2%;
+  border-radius: 5px;
+}
+
+.info {
+  @include theme;
+}
+.alert {
+  @include theme($theme: DarkRed);
+}
+.success {
+  @include theme($theme: DarkGreen);
+}

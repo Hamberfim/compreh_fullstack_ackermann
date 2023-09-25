@@ -1,0 +1,51 @@
+/* SASS file */
+/* main variables */
+$fontFamily: 'Open Sans', sans-serif;
+$color1: #004282;
+$color2: #598dc9;
+$color3: #bd3218;
+$color4: #2d2d2d;
+$color5: #fff;
+$color6: #dbdbdb;
+$color7: #4d4d4d;
+
+body {
+  font-family: $fontFamily;
+  background-color: $color5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0.5rem;
+  background-color: $color5;
+  color: $color4;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+}
+
+article {
+  width: 50%;
+  float: left;
+  background-color: $color1;
+  color: $color5;
+  margin-bottom: 8px;
+  padding: 0.5% 0.8%;
+  border-radius: 5px;
+}
+
+aside {
+  @extend article;
+  width: 45%;
+  float: right;
+  background-color: $color2;
+  color: $color5;
+  font-size: smaller;
+}
