@@ -1,0 +1,44 @@
+---
+// Component Imports
+const pageTitle = 'About Me';
+import Navigation from './Navigation.astro';
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{pageTitle}</title>
+    <style>
+      html,
+      body {
+        font-family: system-ui;
+        margin: 0;
+      }
+      body {
+        padding: 2rem;
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <nav><Navigation /></nav>
+    <main>
+      <h1>About Astro</h1>
+      <h2>... and my new Astro site!</h2>
+
+      <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
+
+      <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
+    </main>
+  </body>
+</html>
