@@ -1,0 +1,5 @@
+Stopped at lesson 10: https://amplify.aws/learn/courses/Fullstack-for-Frontend-Developers-e7319/lessons/10 
+
+In AWS Amplify Studio/ UI Library: https://us-east-2.admin.amplifyapp.com/admin/d3mvz6lkf28zqx/staging/components
+
+(https://us-east-2.console.aws.amazon.com/amplify/home?region=us-east-2#/d3mvz6lkf28zqx)
