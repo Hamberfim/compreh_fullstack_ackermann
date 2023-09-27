@@ -6,16 +6,16 @@
 
 /* eslint-disable */
 import * as React from "react";
+import { Note } from "../models";
 import {
   getOverrideProps,
   useDataStoreCreateAction,
   useStateMutationAction,
 } from "@aws-amplify/ui-react/internal";
-import { Note } from "../models";
 import { schema } from "../models/schema";
 import { Button, Divider, Flex, Icon, TextField } from "@aws-amplify/ui-react";
 export default function CreateNote(props) {
-  const { overrides, ...rest } = props;
+  const { note, overrides, ...rest } = props;
   const [titleValue, setTitleValue] = useStateMutationAction("");
   const [textValue, setTextValue] = useStateMutationAction("");
   const buttonOnClick = useDataStoreCreateAction({
@@ -127,7 +127,7 @@ export default function CreateNote(props) {
           height="40px"
           gap="20px"
           shrink="0"
-          backgroundColor="rgba(4,125,149,1)"
+          backgroundColor="rgba(67,168,84,1)"
           size="default"
           isDisabled={false}
           variation="primary"

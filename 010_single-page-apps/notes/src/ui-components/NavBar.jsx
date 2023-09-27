@@ -21,7 +21,7 @@ export default function NavBar(props) {
       position="relative"
       boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
       padding="24px 32px 24px 32px"
-      backgroundColor="rgba(4,125,149,1)"
+      backgroundColor="rgba(4,52,149,1)"
       {...getOverrideProps(overrides, "NavBar")}
       {...rest}
     >

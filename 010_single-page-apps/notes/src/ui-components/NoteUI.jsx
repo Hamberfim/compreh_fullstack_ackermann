@@ -65,7 +65,7 @@ export default function NoteUI(props) {
             fontFamily="Inter"
             fontSize="16px"
             fontWeight="700"
-            color="rgba(4,125,149,1)"
+            color="rgba(4,52,149,1)"
             lineHeight="20px"
             textAlign="left"
             display="block"

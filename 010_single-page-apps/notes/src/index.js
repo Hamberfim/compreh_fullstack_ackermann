@@ -13,13 +13,15 @@ import { AmplifyProvider } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 // NOTE: add >> @import url('https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900&display=swap'); << to top of src/index.css file
 
+// use theme created in figma and sync with Amplify
+import { studioTheme } from './ui-components';
 // use amplify config
 Amplify.configure(config);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // replace <React.StrictMode> with <AmplifyProvider>
-  <AmplifyProvider>
+  <AmplifyProvider theme={studioTheme}>
     <App />
   </AmplifyProvider>
 );

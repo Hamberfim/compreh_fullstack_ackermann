@@ -142,7 +142,7 @@ export default function UpdateNote(props) {
           height="40px"
           gap="20px"
           shrink="0"
-          backgroundColor="rgba(4,125,149,1)"
+          backgroundColor="rgba(67,168,84,1)"
           size="default"
           isDisabled={false}
           variation="primary"
