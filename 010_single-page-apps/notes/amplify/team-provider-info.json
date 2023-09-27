@@ -10,6 +10,11 @@
       "StackName": "amplify-notes-staging-151257",
       "StackId": "arn:aws:cloudformation:us-east-2:125411378274:stack/amplify-notes-staging-151257/2caf6c00-5c7f-11ee-b3f4-0acb0c7a3e5f",
       "AmplifyAppId": "d3mvz6lkf28zqx"
+    },
+    "categories": {
+      "auth": {
+        "notes": {}
+      }
     }
   }
 }
